@@ -65,13 +65,13 @@ function processReviews(reviews) {
   var reviewSmile = '';
   if (reviewStarsClass == 'good') {
     bannerText = 'We\'ve got our customers happy !';
-    reviewSmile = '<i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>';
+    reviewSmile = '<i class="fa fa-smile-o fa-4x" aria-hidden="true"></i>';
   } else if (reviewStarsClass == 'middle') {
     bannerText = 'Sometimes we\'re unable to fullfil needs of our customers';
-    reviewSmile = '<i class="fa fa-meh-o fa-2x" aria-hidden="true"></i>';
+    reviewSmile = '<i class="fa fa-meh-o fa-4x" aria-hidden="true"></i>';
   } else {
     bannerText = 'Customers blame us for everything';
-    reviewSmile = '<i class="fa fa-frown-o fa-2x" aria-hidden="true"></i>';
+    reviewSmile = '<i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>';
   }
   // Create HTML for widget
   var html = `
@@ -85,7 +85,7 @@ function processReviews(reviews) {
                 <span style="width:` + averageRatePercentage + '%' + '" id="starRatingPresenter"><strong>' + averageRating + `</strong> out of 5</span>
              </div><br>
              <div class="averageRatingWrap">
-                <span class="averageRating">` + averageRating + ` <span class="light">Rating</span></span>
+                <span class="averageRating">` + averageRating + ` <span class="light">Trust Score</span></span>
              </div>
              <div class="reviewersWrap">
                 <span class="reviewers">` + total + ` <span class="light">Reviewers</span></span>
@@ -149,8 +149,8 @@ function showLessReviewBody(e, id) {
 // Function to get reviews - to see a banner effect change based on the average of the reviews change the reviews .json file
 function getReviews(re) {
   $.ajax({
-    url: 'API/reviews.json'
-    //url: 'API/goodreviews.json'
+    //url: 'API/reviews.json'
+    url: 'API/goodreviews.json'
     //url: 'API/badreviews.json'
   }).done(re);
 }

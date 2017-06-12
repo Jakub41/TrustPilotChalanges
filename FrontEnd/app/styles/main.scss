@@ -49,6 +49,10 @@ body {
                     @media screen and (max-width: 1024px) {
                         width: 100%;
                     }
+                    .fa {
+                        position: relative;
+                        top: 12px;
+                    }
                 } // average rating section of first half
                 & .averageRatingInfo {
                     text-align: center; // star rating overiding
