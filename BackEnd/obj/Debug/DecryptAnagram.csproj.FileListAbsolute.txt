@@ -1,0 +1,15 @@
+C:/Users/Administrator/Downloads/Source/Source/bin/Debug/DecryptAnagram.exe.config
+C:/Users/Administrator/Downloads/Source/Source/bin/Debug/wordlist
+C:/Users/Administrator/Downloads/Source/Source/bin/Debug/DecryptAnagram.exe
+C:/Users/Administrator/Downloads/Source/Source/bin/Debug/DecryptAnagram.pdb
+C:/Users/Administrator/Downloads/Source/Source/obj/Debug/DecryptAnagram.csprojResolveAssemblyReference.cache
+C:/Users/Administrator/Downloads/Source/Source/obj/Debug/DecryptAnagram.exe
+C:/Users/Administrator/Downloads/Source/Source/obj/Debug/DecryptAnagram.pdb
+/Users/jakublemiszewski/Downloads/Source/Source/bin/Debug/wordlist
+/Users/jakublemiszewski/Downloads/Source/Source/bin/Debug/DecryptAnagram.exe.config
+/Users/jakublemiszewski/Downloads/Source/Source/bin/Debug/DecryptAnagram.exe
+/Users/jakublemiszewski/Downloads/Source/Source/bin/Debug/DecryptAnagram.pdb
+/Users/jakublemiszewski/Downloads/Source/Source/obj/Debug/DecryptAnagram.csprojResolveAssemblyReference.cache
+/Users/jakublemiszewski/Downloads/Source/Source/obj/Debug/DecryptAnagram.csproj.CoreCompileInputs.cache
+/Users/jakublemiszewski/Downloads/Source/Source/obj/Debug/DecryptAnagram.exe
+/Users/jakublemiszewski/Downloads/Source/Source/obj/Debug/DecryptAnagram.pdb

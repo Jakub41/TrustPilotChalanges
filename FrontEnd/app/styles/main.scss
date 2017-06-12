@@ -1,0 +1,497 @@
+// === COLORS ===
+$lightColor: #ada9a9;
+$goodReviewsColor: #5FCF80;
+$midReviewsColor: #FFC300;
+$badReviewsColor: #FF0000;
+// === FONTS ===
+$fontFamily: 'Helvetica Neue',
+Arial,
+Helvetica,
+sans-serif;
+body {
+    margin: 0;
+    font-family: $fontFamily; // Add container styles. Just for the presentation
+    .reviewsContainer {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 30px;
+    } // add widget styles
+    .reviewWidget {
+        // extra styles for support widget
+        .clear {
+            clear: both;
+        } // styles for half part of widget
+        .half {
+            float: left;
+            margin: 0 10px;
+            display: block; // styles for first half
+            &.first {
+                width: 30%;
+                margin-right: 40px; // styles for widget titlt
+                & .widgetTitle {
+                    text-align: center;
+                    display: block;
+                    margin: 0 auto;
+                    background: $goodReviewsColor;
+                    color: white;
+                    padding: 7px 13px;
+                    border-radius: 3px;
+                    width: 82%;
+                    max-width: 100%;
+                    font-size: 22px;
+                    margin-bottom: 20px; // Styles for bad and middle average reviews
+                    &.bad {
+                        background: red;
+                    }
+                    &.middle {
+                        background: $midReviewsColor;
+                    } // make full width on small screens
+                    @media screen and (max-width: 1024px) {
+                        width: 100%;
+                    }
+                } // average rating section of first half
+                & .averageRatingInfo {
+                    text-align: center; // star rating overiding
+                    & .star-rating {
+                        font-size: 25px;
+                        margin-bottom: 20px;
+                    } // for additional reviews info styles
+                    & .averageRatingWrap,
+                    .reviewersWrap {
+                        float: left;
+                        width: 50%;
+                        font-size: 20px;
+                        font-weight: bold; // light class to add a lil light color on text
+                        .light {
+                            color: $lightColor;
+                            font-weight: normal;
+                        }
+                    } // styles for horizontal line below additional reviews info section
+                    hr {
+                        height: 2px;
+                        border: 0;
+                        background: $lightColor;
+                        width: 180px;
+                        margin-top: 20px;
+                    }
+                } // styles for "Reviews" highlighter part in widget footer first half
+                .reviewFooterIndicator {
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-top: 20px; // add green color to icon
+                    .fa {
+                        color: $goodReviewsColor;
+                        &.bad {
+                            color: red;
+                        }
+                        &.middle {
+                            color: $midReviewsColor;
+                        }
+                    }
+                }
+            } // Styles for second half - reviews part
+            &.second {
+                width: 55%; // here starts the carousel
+                //background-color: blue;
+                .owl-item {
+                  display: block;
+                  // styles for single carousel item
+                  .testimonial {
+                    padding-top: 20px;
+                    // top header of item
+                    .top {
+                      font-size: 18px;
+                      .name {
+                        font-weight: bold;
+                        float: left;
+                        //color: red;
+                      }
+                      .star-rating {
+                        float: right;
+                        font-size: 20px;
+                      } // widget style support purposes
+                      &:before {
+                        clear: both;
+                      }
+                    }// review content styles
+                    .content {
+                      clear: both;
+                      font-style: italic;
+                      padding-top: 20px;
+                      font-size: 18px;
+                      // styles for opening quote icon in content
+                      .firstQuote {
+                        padding-right: 10px;
+                      } // styles for closing quote icon in content
+                      .lastQuote {
+                        padding-left: 10px;
+                      } // styles for main content
+                      .main {
+                        line-height: 1.4; // show more link styles
+                        .showFullReview {
+                          color: $goodReviewsColor;
+                          font-style: normal;
+                          cursor: pointer;
+                        }
+                      }
+                    }
+                    .footer {
+                      clear: both;
+                      margin-top: 10px;
+                      text-align: right;
+                      color: $lightColor;
+                      padding-right: 20px;
+                    }
+                  }
+                }
+            } // styles for next and previous buttons of slider
+            .owl-prev,
+            .owl-next {
+                position: absolute;
+                font-size: 30px;
+                top: 50%;
+                bottom: auto;
+                color: gainsboro;
+                transition: 300ms all ease;
+                opacity: 0;
+            } // styles for specific (previos) navigation button
+            .owl-prev {
+                left: -60px;
+                right: auto;
+            } // styles for specific (next) navigation button
+            .owl-next {
+                left: auto;
+                right: -60px;
+            } // styles for on-hover navigation buttons
+            &:hover {
+                .owl-prev,
+                .owl-next {
+                    color: #ada9a9;
+                    opacity: 1;
+                }
+                .owl-prev {
+                    left: -40px;
+                }
+                .owl-next {
+                    right: -40px;
+                }
+            }
+        } // responsive styles
+        @media screen and (max-width: 1024px) {
+            .half {
+                width: 100% !important;
+                margin: 0;
+                margin-right: 0 !important;
+                margin-bottom: 30px;
+            }
+            .owl-prev,
+            .owl-next {
+                opacity: 1 !important;
+            }
+            .owl-prev {
+                left: -30px !important;
+            }
+            .owl-next {
+                right: -30px !important;
+            }
+        } // GLOBAL STAR RATING STYLES
+        .star-rating {
+            display: inline-block;
+        }
+        .star-rating {
+            overflow: hidden;
+            position: relative;
+            height: 24px;
+            line-height: 24px;
+            font-size: 14px;
+            font-weight: normal;
+            width: 5.4em;
+            font-family: 'FontAwesome'; // margin: 10px auto;
+            display: inline-block;
+            text-align: left;
+            color: $goodReviewsColor;
+            &.bad {
+                color: $badReviewsColor;
+                span {
+                    color: $badReviewsColor;
+                }
+            }
+            &.middle {
+                color: $midReviewsColor;
+                span {
+                    color: $midReviewsColor;
+                }
+            }
+        }
+        .star-rating span {
+            display: block;
+            color: $goodReviewsColor;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            position: absolute;
+            padding-top: 1.5em;
+            width: 100%;
+        }
+        .star-rating span::before {
+            display: block;
+            content: "\f005 \f005 \f005 \f005 \f005";
+            top: 0;
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            font-family: 'FontAwesome';
+        }
+        .star-rating::before {
+            content: "\f006 \f006 \f006 \f006 \f006";
+            top: 0;
+            left: 0px;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
+
+// Styles For Carousel
+.owl-carousel {
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    .owl-item {
+        -webkit-tap-highlight-color: transparent;
+        position: relative;
+    }
+    display: none;
+    width: 100%;
+    z-index: 1;
+    .owl-stage {
+        position: relative;
+        -ms-touch-action: pan-Y;
+        -moz-backface-visibility: hidden;
+        &:after {
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+    }
+    .owl-stage-outer {
+        position: relative;
+        overflow: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    .owl-item,
+    .owl-wrapper {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+    }
+    .owl-item {
+        min-height: 1px;
+        float: left;
+        -webkit-backface-visibility: hidden;
+        -webkit-touch-callout: none;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    .owl-dots.disabled,
+    .owl-nav.disabled {
+        display: none;
+    }
+}
+
+.no-js .owl-carousel {
+    display: block;
+}
+
+.owl-carousel {
+    &.owl-loaded {
+        display: block;
+    }
+    .owl-dot {
+        cursor: pointer;
+        cursor: hand;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .owl-nav {
+        .owl-next,
+        .owl-prev {
+            cursor: pointer;
+            cursor: hand;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    }
+    &.owl-loading {
+        opacity: 0;
+        display: block;
+    }
+    &.owl-hidden {
+        opacity: 0;
+    }
+    &.owl-refresh .owl-item {
+        visibility: hidden;
+    }
+    &.owl-drag .owl-item {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    &.owl-grab {
+        cursor: move;
+        cursor: grab;
+    }
+    &.owl-rtl {
+        direction: rtl;
+        .owl-item {
+            float: right;
+        }
+    }
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+    .owl-animated-in {
+        z-index: 0;
+    }
+    .owl-animated-out {
+        z-index: 1;
+    }
+    .fadeOut {
+        animation-name: fadeOut;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.owl-height {
+    transition: height .5s ease-in-out;
+}
+
+.owl-carousel {
+    .owl-item {
+        .owl-lazy {
+            opacity: 0;
+            transition: opacity .4s ease;
+        }
+        img.owl-lazy {
+            transform-style: preserve-3d;
+        }
+    }
+    .owl-video-wrapper {
+        position: relative;
+        height: 100%;
+        background: #000;
+    }
+    .owl-video-play-icon {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        left: 50%;
+        top: 50%;
+        margin-left: -40px;
+        margin-top: -40px;
+        background: url(owl.video.play.png) no-repeat;
+        cursor: pointer;
+        z-index: 1;
+        -webkit-backface-visibility: hidden;
+        transition: transform .1s ease;
+        &:hover {
+            -ms-transform: scale(1.3, 1.3);
+            transform: scale(1.3, 1.3);
+        }
+    }
+    .owl-video-playing {
+        .owl-video-play-icon,
+        .owl-video-tn {
+            display: none;
+        }
+    }
+    .owl-video-tn {
+        opacity: 0;
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: opacity .4s ease;
+    }
+    .owl-video-frame {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.owl-theme {
+    .owl-dots {
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .owl-nav {
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+        margin-top: 10px;
+        [class*=owl-] {
+            color: #FFF;
+            font-size: 14px;
+            margin: 5px;
+            padding: 4px 7px;
+            background: #D6D6D6;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 3px;
+            &:hover {
+                background: #4DC7A0;
+                color: #FFF;
+                text-decoration: none;
+            }
+        }
+        .disabled {
+            opacity: .5;
+            cursor: default;
+        }
+        &.disabled+.owl-dots {
+            margin-top: 10px;
+        }
+    }
+    .owl-dots .owl-dot {
+        display: inline-block;
+        zoom: 1;
+        span {
+            width: 10px;
+            height: 10px;
+            margin: 5px 7px;
+            background: #D6D6D6;
+            display: block;
+            -webkit-backface-visibility: visible;
+            transition: opacity .2s ease;
+            border-radius: 30px;
+        }
+        &.active span,
+        &:hover span {
+            background: #4DC7A0;
+        }
+    }
+}
