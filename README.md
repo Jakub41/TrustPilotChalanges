@@ -1,8 +1,8 @@
-# TrustPilot Chalanges
-My TrustPilot solution to the challanges
+# TrustPilot Challenges
+My TrustPilot solution to the challenges
 
 ## Intro
-As a developer which likes to code, I decided to challange myself with both assigments. Both tasks were interesting and challanging. 
+As a developer who likes to code, I decided to challenge myself with both assignments. Both tasks were interesting and challenging. 
 
 The solutions: 
 

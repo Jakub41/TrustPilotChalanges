@@ -49,11 +49,11 @@ function processReviews(reviews_list) {
     var reviewSmile = '';
     var siteTrust = '';
     if (reviewStarsClass == 'good') {
-        bannerText = 'We\'ve got our customers happy !';
+        bannerText = 'We make our customers happy!';
         reviewSmile = '<i class="fa fa-smile-o fa-4x" aria-hidden="true"></i>';
         siteTrust = 'Trusted';
     } else if (reviewStarsClass == 'middle') {
-        bannerText = 'Sometimes we\'re unable to fullfil needs of our customers';
+        bannerText = 'Sometimes we can’t live up to our client’s expectations';
         reviewSmile = '<i class="fa fa-meh-o fa-4x" aria-hidden="true"></i>';
         siteTrust = 'Keeps your eyes open';
     } else {
