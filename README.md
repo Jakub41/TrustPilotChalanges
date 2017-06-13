@@ -6,6 +6,6 @@ As a developer which likes to code, I decided to challange myself with both assi
 
 The solutions: 
 
-[Bckend](https://github.com/Jakub41/TrustPilotChalanges/tree/master/BackEnd)
+[Backend](https://github.com/Jakub41/TrustPilotChalanges/tree/master/BackEnd)
 
 [Frontend](https://github.com/Jakub41/TrustPilotChalanges/tree/master/FrontEnd)
